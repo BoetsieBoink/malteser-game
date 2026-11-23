@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+            background-color: beige;
+        }
+        .frame{
+            border-width: 8px;
+            border-color: solid black;
+            border-radius: 6px;
+            background-color: rgb(196, 151, 83);
+            text-align: center;
+        }
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+        button {
+            font-size: 30px;
+            background-color: black;
+            color: white;
+            border-radius: 8px;
+            border-width: 4px;
+        }
+    </style>
+    <body>
+        <script src="code.js"></script>
+        <h1 style="font-family: Arial, Helvetica, sans-serif; text-align: center; text-shadow: 5px;">THE MALTESER GAME</h1>
+        <div class="frame">
+            <h3 id="InfoClick"> How does it work? </h3>
+            <p id="Info" style="display: none;">In "The Malteser Game", you are a prisoner at a high-security prison. You are given a pistol, and in front of you is a silhoutte... <br> The question is: Is it a Malteser, or a fellow inmate? You cannot tell! The lighting is dim, and everybody's shaved bald. <br><b>There's only one way to find out the answer...</b></p>
+        </div>
+
+        <script>
+            var visible = false
+
+            document.getElementById("InfoClick").addEventListener("click", click)
+            function click() {
+                visible = !visible
+                document.getElementById("Info").style.display = visible ? "block" : "none"
+            }
+        </script>
+
+        <div class="frame">
+            <p id="ScoreLabel">SCORE: 0</p>
+            <p>Will you shoot?</p>
+        </div>
+
+        <div class="frame">
+            <img id="PrisonerImg" src="res/imgs/hidden.png">
+            
+            <br>
+            <button id="ShootBtn">
+                Shoot
+            </button>
+            <button id="PassBtn">
+                Pass
+            </button>
+
+            <br>
+            <button id="NextBtn" style="visibility: hidden;">
+                Next
+            </button>
+        </div>
+    </body>
+</html>
